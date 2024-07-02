@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Function bind()</h1>
+
+<p>此例将尝试在 3 秒后显示人名。</p>
+
+<p id="demo"></p>
+
+<script>
+    const person = {
+        firstName:"Bill",
+        lastName: "Gates",
+        display: function() {
+            let x = document.getElementById("demo");
+            x.innerHTML = this.firstName + " " + this.lastName;
+        }
+    }
+    let displayCall = person.display.call(person)
+    let displayApply = person.display.apply(person)
+    let fullNameBind = person.display.bind(person);
+    
+    console.log(displayCall, typeof displayCall)
+    console.log(displayApply, typeof displayApply)
+    console.log(fullNameBind, typeof fullNameBind)
+
+    const person2 = {
+    firstName:"Bill",
+    lastName: "Gates",
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+    }
+
+    const member = {
+    firstName:"Hege",
+    lastName: "Nilsen",
+    }
+
+    let fullName = person2.fullName.bind(member);
+    console.log(typeof fullName)
+</script>
+
+</body>
+</html>
