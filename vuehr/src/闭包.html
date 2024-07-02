@@ -10,12 +10,20 @@
 </body>
 <script>
 
+let a = (function a(){
+    let num=1;
+    return function(){
+        return num++;
+    }
+})();
+console.log(a());
+console.log(a());
+
 // 自执行1
 (function(){
     // 代码块
     alert(234)
-})()
-
+})();
 
 // 自执行2
 (function() {  
