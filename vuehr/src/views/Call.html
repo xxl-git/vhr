@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+let person = {
+    name:'jackson',
+    info:'json fmatt',
+    comb:function(){
+        console.log(this.name+' '+ this.info)
+    },
+    combmore:function(var1,var2){
+        console.log(this.name+' '+ this.info + ' ' + var1 +' '+ var2)
+    }
+}
+
+let subinfo = {
+    name:'java',
+    info:'web dev',
+}
+person.comb.call(subinfo)
+person.combmore.call(subinfo,'v1','v2')
+// apply 如果需要携带参数，则必须是数组形式
+person.comb.apply(subinfo)
+person.combmore.apply(subinfo,['v1','v2'])
+
+
+</script>
+
+
+
+</html>
