@@ -1,6 +1,10 @@
 local z = 20
 
 local function maximum (a)
+    -- 如果不是table类型，返回nil
+    if(type(a) ~= 'table') then
+        return nil
+    end
     local mi = 1             -- 最大值索引
     local m = a[mi]          -- 最大值
     for i,val in ipairs(a) do
@@ -20,8 +24,8 @@ table1.addr='nb'
 
 -- 演示pairs，遍历table，返回key和value
 local function pairsfun()
-    for i,val in pairs(table1) do
-        print(i,val)
+    for index,val in pairs(table1) do
+        print(index,val)
     end
 end
 
